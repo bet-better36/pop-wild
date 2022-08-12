@@ -1,0 +1,20 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body>.bd {
+    height: auto;
+}
+
+.bd {
+    height: 100%;
+    min-height: 100%;
+
+    background: rgb(141, 34, 34);
+}
