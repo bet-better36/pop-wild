@@ -1,0 +1,25 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const timerId = setInterval(function () {
+    console.log('100回後に死ぬ処理')
+    if (++counter > 99) {
+        clearInterval(timerId)
+    }
+}, 100)
