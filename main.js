@@ -48,3 +48,10 @@ const countLoop = () => {
     clickCount();
     clickId = setTimeout(countLoop, 100)
 }
+
+
+window.oncontextmenu = function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+};
