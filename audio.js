@@ -3,7 +3,6 @@ const audioElem2 = new Audio("/audio/a.mp3");
 const audioElem3 = new Audio("/audio/ko-up.mp3");
 const audioElem4 = new Audio("/audio/ko-down.mp3");
 
-
 let elem_volume = document.getElementById("volume");
 let elem_range = document.getElementById("vol_range");
 
@@ -15,15 +14,6 @@ import { clicks } from '/click-count.js';
 
 
 
-// currentAudio1.volume = elem_volume.value;  // 初期値設定
-// currentAudio2.volume = elem_volume.value;  // 初期値設定
-
-// ボリューム変更時
-elem_volume.addEventListener("change", function () {
-    audioElem1.volume = elem_volume.value;
-    audioElem2.volume = elem_volume.value;
-    elem_range.textContent = elem_volume.value;
-}, false);
 
 
 function clickDownPlayAudio() {

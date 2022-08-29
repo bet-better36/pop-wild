@@ -11,28 +11,36 @@ import {
     preventAudioLoop,
 } from '/audio.js';
 
-area.addEventListener('mousedown', () => {
-    isDown = true;
-    countLoop();
-    reset();
-    start();
-    // clickCount();
-    clickDownPlayAudio();
+['mousedown', 'touchstart'].forEach(evt =>
+    area.addEventListener(evt, (e) => {
+        e.preventDefault();
+        isDown = true;
+        countLoop();
+        reset();
+        start();
+        // clickCount();
+        clickDownPlayAudio();
+        false
+    })
+);
 
+['mouseup', 'touchend'].forEach(evt =>
+    area.addEventListener(evt, (e) => {
+        e.preventDefault();
+        clearTimeout(clickId);
+        stop();
+        clickUpPlayAudio();
+    })
+);
 
-})
-
-area.addEventListener('mouseup', () => {
-    clearTimeout(clickId);
-    stop();
-    clickUpPlayAudio();
-})
-
-area.addEventListener('mouseout', () => {
-    clearTimeout(clickId);
-    preventAudioLoop();
-    stop();
-})
+['mouseout',].forEach(evt =>
+    area.addEventListener('mouseout', (e) => {
+        e.preventDefault();
+        clearTimeout(clickId);
+        preventAudioLoop();
+        stop();
+    })
+);
 
 
 
