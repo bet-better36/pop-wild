@@ -20,8 +20,7 @@ import {
         start();
         // clickCount();
         clickDownPlayAudio();
-        false
-    })
+    }, false)
 );
 
 ['mouseup', 'touchend'].forEach(evt =>
@@ -30,19 +29,17 @@ import {
         clearTimeout(clickId);
         stop();
         clickUpPlayAudio();
-    })
+    }, false)
 );
 
 ['mouseout',].forEach(evt =>
-    area.addEventListener('mouseout', (e) => {
+    area.addEventListener(evt, (e) => {
         e.preventDefault();
         clearTimeout(clickId);
         preventAudioLoop();
         stop();
-    })
+    }, false)
 );
-
-
 
 const countLoop = () => {
     clickCount();

@@ -13,9 +13,6 @@ import { time } from '/timer.js';
 import { clicks } from '/click-count.js';
 
 
-
-
-
 function clickDownPlayAudio() {
     currentAudio2.pause();
     currentAudio2.currentTime = 0;
